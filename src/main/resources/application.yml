@@ -1,0 +1,21 @@
+server:
+  port: 8989 #tocmat启动端口号
+  jsp-servlet:
+    init-parameters:
+      development: true #开启jsp的热部署
+  context-path: /SpringBoot
+spring:
+  mvc:
+    view:
+      prefix: / #配置SpringBoot的视图解析器
+      suffix: .jsp
+  datasource:
+    type: org.apache.commons.dbcp.BasicDataSource #指定连接池类型
+    driver-class-name: com.mysql.jdbc.Driver #指定驱动
+    url: jdbc:mysql://192.168.193.14:8066/mycat?characterEncoding=utf-8 #指定url
+    username: root #指定用户名
+    password: root #指定密码
+  #起别名
+mybatis:
+    type-aliases-package: com.baizhi.entity  #起别名
+    mapper-locations: classpath:com/baizhi/mapper/*Mapper.xml #Mapper文件的注册
